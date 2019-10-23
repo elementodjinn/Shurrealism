@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/UTech/MG-Platformer/BasicAssets/Scenes/SampleScene.unity
+- path: Assets/jess_scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
