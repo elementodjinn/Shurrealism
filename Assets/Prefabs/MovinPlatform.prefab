@@ -12,6 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d02c5df7127634084307d2e8855bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTime: 5
+  speedScaleX: 1
+  speedScaleY: 1
+  rand: 1
+--- !u!50 &5021106281770798920
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022741344077628061}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1520213280042700761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,6 +48,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MovinPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813229337971559748, guid: c23070a4f5da9e1438d70afa67e6b591,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7783680008945481189, guid: c23070a4f5da9e1438d70afa67e6b591,
         type: 3}
