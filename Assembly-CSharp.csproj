@@ -57,8 +57,10 @@
   <ItemGroup>
      <Compile Include="Assets\Our Team&apos;s Assets\Scripts\Grounded.cs" />
      <Compile Include="Assets\Our Team&apos;s Assets\Scripts\Player_Movement.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\MovinPlatform.cs" />
      <Compile Include="Assets\Scripts\RandomPlatform.cs" />
+     <Compile Include="Assets\Scripts\sideGroundCheck.cs" />
      <Compile Include="Assets\UTech\MG-Platformer\BasicAssets\Scripts\Core\Fuzzy.cs" />
      <Compile Include="Assets\UTech\MG-Platformer\BasicAssets\Scripts\Core\HeapQueue.cs" />
      <Compile Include="Assets\UTech\MG-Platformer\BasicAssets\Scripts\Core\Simulation.cs" />
