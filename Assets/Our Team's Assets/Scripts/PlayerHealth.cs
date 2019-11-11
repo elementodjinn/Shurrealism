@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    public Sprite[] HeartSprites;
+
+    public Image HeartUI;
 
     [SerializeField] Transform spawnPoint;
 
@@ -33,5 +38,10 @@ public class PlayerHealth : MonoBehaviour
         {
             DamagePlayer(1);
         }
+    }
+
+    private void Update()
+    {
+        HeartUI.sprite = HeartSprites[currentHealth];
     }
 }
