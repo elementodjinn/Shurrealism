@@ -63,8 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Our Team's Assets\Scripts\AttackTrigger.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Grounded.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Player_Movement.cs" />
+    <Compile Include="Assets\Our Team's Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\MovinPlatform.cs" />
