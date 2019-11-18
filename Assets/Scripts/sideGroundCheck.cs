@@ -26,8 +26,16 @@ public class sideGroundCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
-            if (isLeft) enemy.GetComponent<EnemyMovement>().leftGrounded = true;
-            else enemy.GetComponent<EnemyMovement>().rightGrounded = true;
+            if (isLeft)
+            {
+                try { enemy.GetComponent<EnemyMovement>().leftGrounded = true; }
+                catch { enemy.GetComponent<ChomperMovement>().leftGrounded = true; }
+            }
+            else
+            {
+                try { enemy.GetComponent<EnemyMovement>().rightGrounded = true; }
+                catch { enemy.GetComponent<ChomperMovement>().rightGrounded = true; }
+            }
         }
     }
 
@@ -36,8 +44,16 @@ public class sideGroundCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
-            if (isLeft) enemy.GetComponent<EnemyMovement>().leftGrounded = false;
-            else enemy.GetComponent<EnemyMovement>().rightGrounded = false;
+            if (isLeft)
+            {
+                try { enemy.GetComponent<EnemyMovement>().leftGrounded = false; }
+                catch { enemy.GetComponent<ChomperMovement>().leftGrounded = false; }
+            }
+            else
+            {
+                try { enemy.GetComponent<EnemyMovement>().rightGrounded = false; }
+                catch { enemy.GetComponent<ChomperMovement>().rightGrounded = false; }
+            }
         }
     }
 }
