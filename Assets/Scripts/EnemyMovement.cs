@@ -13,6 +13,8 @@ public class EnemyMovement : MonoBehaviour
     public float jumpVelocity = 5f;
 
     public bool charger = false;
+    public bool coward = false;
+
     public bool rightJumper = false;
     public bool leftJumper = false;
 
@@ -29,6 +31,8 @@ public class EnemyMovement : MonoBehaviour
     public bool leftGrounded = false;
     public bool rightGrounded = false;
 
+    bool canFlip = true;
+
     int charge = 1;
 
     public int dir = 1;
@@ -43,16 +47,19 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(leftGrounded && rightGrounded)
+        if(!(leftGrounded || rightGrounded))
         {
             if (!GetComponent<SpriteRenderer>().flipX) dir = 1;
             else dir = -1;
         }
-        else if ((leftGrounded || rightGrounded) && ((dir > 0 && !rightGrounded) || (dir < 0 && !leftGrounded)))
+        else if ( ((dir > 0 && !rightGrounded) || (dir < 0 && !leftGrounded)))
         {
             if ((!leftGrounded && leftJumper) || (!rightGrounded && rightJumper)) jump();
             else flip();
-            
+        }
+        else if (leftGrounded && rightGrounded)
+        {
+            canFlip = true;
         }
         // if the Player is falling, apply gravity multiplier
         if (rb.velocity.y < 0)
@@ -72,29 +79,40 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.collider.tag == "Enemy")
         {
-            if (!charger) flip();
-            else
+            if (charger)
             {
                 charge = 3;
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
+            else if (coward)
+            {
+                flip();
+                Vector3 movement = new Vector3(dir, 0f, 0f);
+                transform.position += movement * Time.deltaTime * 3 * moveSpeed;
+                jump();
+            }
+            else flip();
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Enemy" && charger)
+        else
         {
-            charge = 1;
-            GetComponent<SpriteRenderer>().color = Color.white;
+            flip();
         }
     }
 
     void flip()
     {
-        dir = -dir;
-        if (dir > 0) GetComponent<SpriteRenderer>().flipX = false;
-        else GetComponent<SpriteRenderer>().flipX = true;
+        if (canFlip)
+        {
+            dir = -dir;
+            if (dir > 0) GetComponent<SpriteRenderer>().flipX = false;
+            else GetComponent<SpriteRenderer>().flipX = true;
+            if (charger)
+            {
+                charge = 1;
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            canFlip = false;
+        }
     }
 
     void jump()
