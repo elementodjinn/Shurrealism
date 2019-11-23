@@ -6,6 +6,7 @@ public class JumpCheck : MonoBehaviour
 {
 
     GameObject enemy;
+    public int hp = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,8 @@ public class JumpCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            Destroy(enemy);
+            hp--;
+            if(hp <= 0) Destroy(enemy);
         }
     }
 }

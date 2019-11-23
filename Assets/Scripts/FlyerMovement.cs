@@ -17,6 +17,10 @@ public class FlyerMovement : MonoBehaviour
 
     bool canFlip = true;
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float shotTimer = 5f;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,12 +38,18 @@ public class FlyerMovement : MonoBehaviour
     void Update()
     {
         rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        shotTimer -= Time.deltaTime;
+        if(shotTimer <= 0)
+        {
+            shotTimer = 5f;
+            shoot();
+        }
         if (rb.velocity.y < -10f)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
-            canFlip = true;
         }
-        if (rb.velocity.y > 5f) flip();
+        else if (rb.velocity.y < 0f) flip();
+        if (rb.velocity.y > 5f) canFlip = true;
 
         Vector3 movement = new Vector3(dir, 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
@@ -56,5 +66,11 @@ public class FlyerMovement : MonoBehaviour
             else GetComponent<SpriteRenderer>().flipX = true;
             canFlip = false;
         }
+    }
+
+    void shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletPrefab.GetComponent<BulletBehavior>().target = GameObject.FindWithTag("Player");
     }
 }
