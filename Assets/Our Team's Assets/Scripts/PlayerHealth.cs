@@ -34,6 +34,14 @@ public class PlayerHealth : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+    public void HealPlayer (int health)
+    {
+        currentHealth += health;
+        if (currentHealth > 3)
+        {
+            currentHealth = 3;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,6 +49,15 @@ public class PlayerHealth : MonoBehaviour
         {
             DamagePlayer(1);
             invulRemaining = invulTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "HealthPowerup")
+        {
+            HealPlayer(1);
+            Destroy(collision.gameObject);
         }
     }
 
