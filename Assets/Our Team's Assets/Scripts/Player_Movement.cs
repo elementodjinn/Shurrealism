@@ -55,7 +55,15 @@ public class Player_Movement : MonoBehaviour
         // gets the location of the player and updates it constantly
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
-        
+
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.localScale = new Vector2(-0.5917852f, transform.localScale.y);
+        }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.localScale = new Vector2(0.5917852f, transform.localScale.y);
+        }
     }
 
     // if the Jump button is pushed, apply jump velocity

@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     public int startingHealth = 3;
     public int currentHealth = 3;
 
+    public float invulTime = 2.0f;
+    public float invulRemaining = 0;
+
     Rigidbody2D rb;
 
     private void Awake()
@@ -34,14 +37,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if (collision.collider.tag == "Enemy" && invulRemaining < 0)
         {
             DamagePlayer(1);
+            invulRemaining = invulTime;
         }
     }
 
     private void Update()
     {
         HeartUI.sprite = HeartSprites[currentHealth];
+        invulRemaining -= Time.deltaTime;
     }
 }
