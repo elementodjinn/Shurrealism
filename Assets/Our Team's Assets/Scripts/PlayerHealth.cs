@@ -59,6 +59,20 @@ public class PlayerHealth : MonoBehaviour
             HealPlayer(1);
             Destroy(collision.gameObject);
         }
+        if (collision.tag == "FullHealthPowerup")
+        {
+            HealPlayer(3);
+            Destroy(collision.gameObject);
+        }
+        if (collision.tag == "Respawn")
+        {
+            spawnPoint = collision.transform;
+        }
+        if (collision.tag == "InstantDeath")
+        {
+            DamagePlayer(3);
+            invulRemaining = invulTime;
+        }
     }
 
     private void Update()

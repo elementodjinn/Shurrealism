@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\MainMenuScene\mainMenuS.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\AttackTrigger.cs" />
+    <Compile Include="Assets\Our Team's Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Grounded.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Player_Movement.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\PlayerAttack.cs" />
