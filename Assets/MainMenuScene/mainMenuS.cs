@@ -27,11 +27,14 @@ public class mainMenuS : MonoBehaviour
     {
         string buttonName = EventSystem.current.
                             currentSelectedGameObject.name;
-        GameObject.Find("playButton").GetComponentInChildren<Text>().text = "yooo";
         if (buttonName.Equals("creditsButton"))
             SceneManager.LoadScene("creditsScene");
         else
-            GameObject.Find("playButton").GetComponentInChildren<Text>().text = "yooo";
+        {
+            //Level_Scene
+            SceneManager.LoadScene("Level_Scene");
+        }
+
 
     }
 }
