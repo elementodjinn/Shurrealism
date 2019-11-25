@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MainMenuScene\mainMenuS.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\AttackTrigger.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Grounded.cs" />
     <Compile Include="Assets\Our Team's Assets\Scripts\Player_Movement.cs" />
@@ -117,24 +118,42 @@
     <Compile Include="Assets\UTech\MG-Platformer\ModAssets\ModResources\Scripts\Platformer\PlatformerJumpPad.cs" />
     <Compile Include="Assets\UTech\MG-Platformer\ModAssets\ModResources\Scripts\Platformer\PlatformerSpeedPad.cs" />
     <Compile Include="Assets\UTech\MG-Platformer\ModAssets\ModResources\Scripts\Platformer\SimpleTrigger.cs" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\UTech\MG-Platformer\ModAssets\ModResources\Shaders\SpritesHue.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\UTech\MG-Platformer\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\MainMenuScene\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/jsgir/Desktop/AcidTrip/Shurrealism/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
