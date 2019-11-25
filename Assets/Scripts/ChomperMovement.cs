@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ChomperMovement : MonoBehaviour
 {
-    // horizontal move speed for the player
+    // horizontal move speed
     public float moveSpeed = 10f;
-
-    // gravity multiplier for high jumps (holding down the spacebar)
-    // making it larger will cause high jumps to fall more quickly
     public float fallMultiplier = 2.5f;
-    // rigidbody of the Player
+
     Rigidbody2D rb;
 
-    public float moveTimer = 3f;
+    public float moveTimer = 3f;//how long it takes for chomper to move
 
 
     private void Awake()
@@ -21,7 +18,7 @@ public class ChomperMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // True if the player is touching the ground
+    // checks if each edge is touching the ground
     public bool leftGrounded = false;
     public bool rightGrounded = false;
 

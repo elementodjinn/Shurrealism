@@ -12,7 +12,10 @@ public class EnemyMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float jumpVelocity = 5f;
 
+    //will gain 3x speed when contacting enemy if true
     public bool charger = false;
+
+    //will jump away when contacting enemy if true
     public bool coward = false;
 
     public bool rightJumper = false;
@@ -57,10 +60,8 @@ public class EnemyMovement : MonoBehaviour
             if ((!leftGrounded && leftJumper) || (!rightGrounded && rightJumper)) jump();
             else flip();
         }
-        else if (leftGrounded && rightGrounded)
-        {
-            canFlip = true;
-        }
+        else if (leftGrounded && rightGrounded) canFlip = true;
+
         // if the Player is falling, apply gravity multiplier
         if (rb.velocity.y < 0)
         {

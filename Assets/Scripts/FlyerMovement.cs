@@ -19,7 +19,7 @@ public class FlyerMovement : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float shotTimer = 5f;
+    public float shotTimer = 5f; //how long it takes for flyer to fire
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class FlyerMovement : MonoBehaviour
             shotTimer = 5f;
             shoot();
         }
-        if (rb.velocity.y < -10f)
+        if (rb.velocity.y < -jumpVelocity)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
         }
