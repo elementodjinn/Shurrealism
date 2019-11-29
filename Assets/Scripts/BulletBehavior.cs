@@ -16,9 +16,6 @@ public class BulletBehavior: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag != "Enemy" && collision.collider.tag != "Untagged")
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
