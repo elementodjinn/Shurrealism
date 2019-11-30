@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8056504732734246263}
   - component: {fileID: 8056504732734246262}
   - component: {fileID: 3990428120083169819}
+  - component: {fileID: 5294809775926329788}
   m_Layer: 0
   m_Name: basicEnemy
   m_TagString: Enemy
@@ -109,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6247032, y: 4.806806}
+  m_Size: {x: 2.6247032, y: 4.15}
   m_EdgeRadius: 0
 --- !u!50 &8056504732734246262
 Rigidbody2D:
@@ -154,6 +155,19 @@ MonoBehaviour:
   leftGrounded: 0
   rightGrounded: 0
   dir: 1
+--- !u!114 &5294809775926329788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056504732734246260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cf529396053a841bb37cc2ba820007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 420
 --- !u!1 &8056504734678683590
 GameObject:
   m_ObjectHideFlags: 0
