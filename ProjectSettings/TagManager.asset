@@ -10,6 +10,7 @@ TagManager:
   - HealthPowerup
   - InstantDeath
   - FullHealthPowerup
+  - PunchableBlock
   layers:
   - Default
   - TransparentFX
