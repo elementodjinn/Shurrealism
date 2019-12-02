@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/MainMenuScene/Scenes/mainMenuScene.unity
-=======
-- path: Assets/Scenes/KelvinScene.unity
->>>>>>> Stashed changes
+- path: Assets/Level_Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
