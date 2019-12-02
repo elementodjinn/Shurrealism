@@ -29,6 +29,9 @@ public class badTripMovement : MonoBehaviour
 
     float attackDuration = 2f;
     float attackCooldown = 5f;
+    public bool leftGrounded = true;
+    public bool rightGrounded = true;
+    bool canFlip = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +46,13 @@ public class badTripMovement : MonoBehaviour
         switch (state) {
             case 0:
                 attack.enabled = false;
-                if (target.transform.position.x < transform.position.x) {
-                    dir = -1;
-                    transform.localScale = new Vector2(-scale, transform.localScale.y);
-                }
-                else if (target.transform.position.x > transform.position.x)
+                if (((dir > 0 && !rightGrounded) || (dir < 0 && !leftGrounded)))
                 {
-                    dir = 1;
-                    transform.localScale = new Vector2(scale, transform.localScale.y);
+                    flip();
                 }
-                // if the Player is falling, apply gravity multiplier
+                else if (leftGrounded && rightGrounded) canFlip = true;
+                // if falling, apply gravity multiplier
+                if (leftGrounded && rightGrounded) canFlip = true;
                 if (rb.velocity.y < 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 
                 // gets the location of the player and updates it constantly
@@ -60,7 +60,7 @@ public class badTripMovement : MonoBehaviour
                 transform.position += movement * Time.deltaTime * moveSpeed;
 
                 attackCooldown -= Time.deltaTime;
-                if (attackCooldown < 0)
+                if (attackCooldown < 0 && leftGrounded && rightGrounded)
                 {
                     state = 1;
                     attackCooldown = 5f;
@@ -78,8 +78,31 @@ public class badTripMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Wall")
+        {
+            canFlip = true;
+            Vector3 movement = new Vector3(-dir, 0f, 0f);
+            transform.position += movement * Time.deltaTime * moveSpeed * 3;
+            flip();
+            jump();
+        }
+    }
+
     void jump()
     {
-        rb.velocity = Vector2.up * jumpVelocity;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
+    }
+
+    void flip()
+    {
+        if (canFlip)
+        {
+            dir = -dir;
+            if (dir > 0) transform.localScale = new Vector2(scale, transform.localScale.y);
+            else transform.localScale = new Vector2(-scale, transform.localScale.y);
+            canFlip = false;
+        }
     }
 }

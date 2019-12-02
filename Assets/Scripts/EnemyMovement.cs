@@ -24,7 +24,11 @@ public class EnemyMovement : MonoBehaviour
     // rigidbody of the Player
     Rigidbody2D rb;
 
-
+    /*
+     SOME NOTES:
+     basicenemy can be used as the one on fire
+     if you set an enemy's hp to 420 they're invincible
+         */
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

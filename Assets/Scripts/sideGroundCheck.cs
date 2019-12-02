@@ -26,15 +26,18 @@ public class sideGroundCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
+            
             if (isLeft)
             {
-                try { enemy.GetComponent<EnemyMovement>().leftGrounded = true; }
-                catch { enemy.GetComponent<ChomperMovement>().leftGrounded = true; }
+                if(enemy.GetComponent<EnemyMovement>() != null) enemy.GetComponent<EnemyMovement>().leftGrounded = true;
+                else if (enemy.GetComponent<ChomperMovement>() != null) enemy.GetComponent<ChomperMovement>().leftGrounded = true;
+                else if (enemy.GetComponent<badTripMovement>() != null) enemy.GetComponent<badTripMovement>().leftGrounded = true;
             }
             else
             {
-                try { enemy.GetComponent<EnemyMovement>().rightGrounded = true; }
-                catch { enemy.GetComponent<ChomperMovement>().rightGrounded = true; }
+                if (enemy.GetComponent<EnemyMovement>() != null) enemy.GetComponent<EnemyMovement>().rightGrounded = true;
+                else if (enemy.GetComponent<ChomperMovement>() != null) enemy.GetComponent<ChomperMovement>().rightGrounded = true;
+                else if (enemy.GetComponent<badTripMovement>() != null) enemy.GetComponent<badTripMovement>().rightGrounded = true;
             }
         }
     }
@@ -46,13 +49,15 @@ public class sideGroundCheck : MonoBehaviour
         {
             if (isLeft)
             {
-                try { enemy.GetComponent<EnemyMovement>().leftGrounded = false; }
-                catch { enemy.GetComponent<ChomperMovement>().leftGrounded = false; }
+                if (enemy.GetComponent<EnemyMovement>() != null) enemy.GetComponent<EnemyMovement>().leftGrounded = false;
+                else if (enemy.GetComponent<ChomperMovement>() != null) enemy.GetComponent<ChomperMovement>().leftGrounded = false;
+                else if (enemy.GetComponent<badTripMovement>() != null) enemy.GetComponent<badTripMovement>().leftGrounded = false;
             }
             else
             {
-                try { enemy.GetComponent<EnemyMovement>().rightGrounded = false; }
-                catch { enemy.GetComponent<ChomperMovement>().rightGrounded = false; }
+                if (enemy.GetComponent<EnemyMovement>() != null) enemy.GetComponent<EnemyMovement>().rightGrounded = false;
+                else if (enemy.GetComponent<ChomperMovement>() != null) enemy.GetComponent<ChomperMovement>().rightGrounded = false;
+                else if (enemy.GetComponent<badTripMovement>() != null) enemy.GetComponent<badTripMovement>().rightGrounded = false;
             }
         }
     }
