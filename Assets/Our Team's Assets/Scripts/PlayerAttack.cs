@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
 
     public Collider2D attackTrigger;
 
+    public Animator anim;
+
     private void Awake()
     {
         attackTrigger.enabled = false;
@@ -25,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
 
             attackTrigger.enabled = true;
         }
+        anim.SetBool("Attacking", attacking);
         if (attacking)
         {
             if (attackTimer > 0)
