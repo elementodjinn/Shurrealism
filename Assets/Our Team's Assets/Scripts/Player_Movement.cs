@@ -18,6 +18,8 @@ public class Player_Movement : MonoBehaviour
     // making it larger will cause low jumps to be lower
     public float lowJumpMultiplier = 2f;
 
+    public Animator anim;
+
     // rigidbody of the Player
     Rigidbody2D rb;
 
@@ -55,6 +57,9 @@ public class Player_Movement : MonoBehaviour
         // gets the location of the player and updates it constantly
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
+
+        anim.SetFloat("Speed", Mathf.Abs(movement.x));
+        anim.SetBool("Jumping", Input.GetButton("Jump"));
 
         if (Input.GetAxis("Horizontal") < 0)
         {
