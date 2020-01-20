@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("f") && !attacking)
+        if (Input.GetKeyDown("left shift") && !attacking)
         {
             attacking = true;
             attackTimer = attackCd;

@@ -47,7 +47,7 @@ public class Player_Movement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
         // if the Player is jumping but not holding the Jump button, apply low jump gravity multiplier
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0 && !(Input.GetKey("w") || Input.GetButton("Jump")))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
@@ -59,7 +59,7 @@ public class Player_Movement : MonoBehaviour
         transform.position += movement * Time.deltaTime * moveSpeed;
 
         anim.SetFloat("Speed", Mathf.Abs(movement.x));
-        anim.SetBool("Jumping", Input.GetButton("Jump"));
+        anim.SetBool("Jumping", (Input.GetKey("w") || Input.GetButton("Jump")));
 
         if (Input.GetAxis("Horizontal") < 0)
         {
@@ -74,7 +74,7 @@ public class Player_Movement : MonoBehaviour
     // if the Jump button is pushed, apply jump velocity
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if ((Input.GetKeyDown("w") || Input.GetButtonDown("Jump")) && isGrounded == true)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
         }
