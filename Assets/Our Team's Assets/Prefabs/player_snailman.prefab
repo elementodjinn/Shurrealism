@@ -45,18 +45,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0093512535, y: -0.18948495}
+  m_Offset: {x: -0.0093512535, y: 0.6951132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.6, y: 2.6}
-    newSize: {x: 2.6, y: 2.6}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5353866, y: 4.3690825}
+  m_Size: {x: 2.5353866, y: 2.599886}
   m_EdgeRadius: 0
 --- !u!114 &2106075968
 MonoBehaviour:
@@ -243,7 +243,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.91477334, y: -0.5020087}
+  m_Offset: {x: 0.91477334, y: -0.5020086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.97885853, y: 4.910543}
+  m_Size: {x: 0.9788585, y: 4.910543}
   m_EdgeRadius: 0
 --- !u!50 &7739057979472342524
 Rigidbody2D:
@@ -289,9 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a96b1fb8c164724a8c47f07d34cb405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
-  jumpVelocity: 8
-  fallMultiplier: 5
+  moveSpeed: 16
+  jumpVelocity: 12
+  fallMultiplier: 12
   lowJumpMultiplier: 2.5
   anim: {fileID: 323624678}
   isGrounded: 0
@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTrigger: {fileID: 2106075969}
+  anim: {fileID: 323624678}
 --- !u!95 &323624678
 Animator:
   serializedVersion: 3
@@ -407,7 +408,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.37445313, y: 0.17328261}
+  m_Offset: {x: 0.33053985, y: 0.17328261}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -418,5 +419,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.88905084, y: 0.07120612}
+  m_Size: {x: 0.14253658, y: 0.07120612}
   m_EdgeRadius: 0
