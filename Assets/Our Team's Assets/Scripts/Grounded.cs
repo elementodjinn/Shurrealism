@@ -24,7 +24,7 @@ public class Grounded : MonoBehaviour
     // If Player is touching the ground, isGrounded is set to True
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground" | collision.collider.tag == "PunchableBlock")
         {
             Player.GetComponent<Player_Movement>().isGrounded = true;
         }
@@ -33,7 +33,7 @@ public class Grounded : MonoBehaviour
     // If player stops touching the ground, isGrounded is set to False
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground" | collision.collider.tag == "PunchableBlock")
         {
             Player.GetComponent<Player_Movement>().isGrounded = false;
         }

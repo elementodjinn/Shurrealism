@@ -73,6 +73,10 @@ public class PlayerHealth : MonoBehaviour
             DamagePlayer(3);
             invulRemaining = invulTime;
         }
+        if (collision.tag == "Portal")
+        {
+            transform.position = spawnPoint.position;
+        }
     }
 
     private void Update()
