@@ -32,7 +32,9 @@ public class mainMenuS : MonoBehaviour
         else
         {
             //Level_Scene
-            SceneManager.LoadScene("Level_Scene");
+            string whatToLoad = buttonName.Equals("playButton") ? "Level_Scene" : "HowToScreen";
+            SceneManager.LoadScene(whatToLoad);
+
         }
 
 
