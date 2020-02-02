@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/jess_scene_2.unity
+- path: Assets/MainMenuScene/Scenes/mainMenuScene2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
