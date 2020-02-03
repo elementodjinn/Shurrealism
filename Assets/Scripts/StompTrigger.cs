@@ -11,7 +11,8 @@ public class StompTrigger : MonoBehaviour
         if (col.isTrigger != true && col.CompareTag("Enemy"))
         {
             col.gameObject.GetComponent<EnemyHealth>().takeDamage(1);
-            rb.velocity = Vector2.up * 10;
+            rb.velocity = Vector2.up * 15;
+            rb.gameObject.GetComponent<PlayerHealth>().invulRemaining = .5f;
         }
     }
 }

@@ -50,9 +50,8 @@ public class badTripMovement : MonoBehaviour
                 {
                     flip();
                 }
-                else if (leftGrounded && rightGrounded) canFlip = true;
+                if (rightGrounded && leftGrounded) canFlip = true;
                 // if falling, apply gravity multiplier
-                if (leftGrounded && rightGrounded) canFlip = true;
                 if (rb.velocity.y < 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 
                 // gets the location of the player and updates it constantly
@@ -80,13 +79,13 @@ public class badTripMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Wall")
+        if (collision.collider.tag == "Wall" || collision.collider.tag == "Ground")
         {
-            canFlip = true;
             Vector3 movement = new Vector3(-dir, 0f, 0f);
-            transform.position += movement * Time.deltaTime * moveSpeed * 3;
+            transform.position += movement * Time.deltaTime * moveSpeed * 20;
+            canFlip = true;
             flip();
-            jump();
+            //if(collision.collider.tag == "Wall") jump();
         }
     }
 

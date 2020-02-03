@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MainMenuScene/Scenes/mainMenuScene2.unity
+- path: Assets/Scenes/KelvinScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
