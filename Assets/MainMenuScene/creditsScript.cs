@@ -24,7 +24,7 @@ public class creditsScript : MonoBehaviour
 		string buttonName = EventSystem.current.
 							currentSelectedGameObject.name;
 		if (buttonName.Equals("backButton"))
-			SceneManager.LoadScene("mainMenuScene");
+			SceneManager.LoadScene("mainMenuScene2");
 
 	}
 }
