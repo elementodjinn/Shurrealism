@@ -12,6 +12,7 @@ TagManager:
   - FullHealthPowerup
   - PunchableBlock
   - Portal
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

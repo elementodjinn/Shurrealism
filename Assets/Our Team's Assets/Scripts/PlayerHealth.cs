@@ -77,6 +77,10 @@ public class PlayerHealth : MonoBehaviour
         {
             transform.position = spawnPoint.position;
         }
+        if (collision.tag == "Checkpoint")
+        {
+            spawnPoint.position = transform.position;
+        }
     }
 
     private void Update()

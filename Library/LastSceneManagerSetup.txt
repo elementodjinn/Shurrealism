@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MainMenuScene/Scenes/HowToScreen.unity
+- path: Assets/Level_Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
