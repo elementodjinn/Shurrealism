@@ -17,7 +17,7 @@ public class badTripMovement : MonoBehaviour
 
     int state = 0;//0=moving, 1=attacking
     public Collider2D attack;
-    public float scale = 0.9906484f;
+    public float scale = 1.465169f;
 
     private void Awake()
     {
@@ -28,10 +28,13 @@ public class badTripMovement : MonoBehaviour
     public int dir = 1;
 
     float attackDuration = 2f;
-    float attackCooldown = 5f;
+    float attackCooldown = 4f;
     public bool leftGrounded = true;
     public bool rightGrounded = true;
     bool canFlip = false;
+    bool attackAnim = false;
+
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -59,8 +62,14 @@ public class badTripMovement : MonoBehaviour
                 transform.position += movement * Time.deltaTime * moveSpeed;
 
                 attackCooldown -= Time.deltaTime;
-                if (attackCooldown < 0 && leftGrounded && rightGrounded)
+                if (attackCooldown < .5 && !attackAnim)
                 {
+                    anim.SetTrigger("Attack");
+                    attackAnim = true;
+                }
+                if (attackCooldown < 0)// && leftGrounded && rightGrounded)
+                {
+                    attackAnim = false;
                     state = 1;
                     attackCooldown = 5f;
                 }
